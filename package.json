@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.14.12",
     "@types/pg": "^8.10.9",
     "db-migrate-pg": "^1.5.2",
     "dotenv": "^16.3.1",
