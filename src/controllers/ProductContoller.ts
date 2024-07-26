@@ -2,9 +2,15 @@
 
 import { Request, Response, NextFunction } from "express";
 import { IProductInteractor } from "../interfaces/IProductIntetactor";
+import { inject, injectable } from "inversify";
+import { INTERFACE_TYPE } from "../utils";
+
+@injectable()
 export class ProductController {
   private interactor: IProductInteractor;
-  constructor(interactor: IProductInteractor) {
+  constructor(
+    @inject(INTERFACE_TYPE.ProductInteractor) interactor: IProductInteractor
+  ) {
     this.interactor = interactor;
   }
 

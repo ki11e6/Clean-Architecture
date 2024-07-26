@@ -1,9 +1,11 @@
-import {IMailer} from "../interfaces/IMailer";
+import { injectable } from "inversify";
+import { IMailer } from "../interfaces/IMailer";
 
-export class Mailer implements IMailer{
-	SendEmail(to: string, product: unknown) {
-		//sendgrid implementaions
-		console.log('sending mail')
-	return true;
-	}
+@injectable()
+export class Mailer implements IMailer {
+  SendEmail(to: string, product: unknown): any {
+    //sendgrid implementation
+    console.log("sending mail");
+    return true;
+  }
 }

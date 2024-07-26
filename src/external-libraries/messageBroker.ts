@@ -1,9 +1,11 @@
-import {IMessageBroker} from "../interfaces/IMessageBroker";
+import { injectable } from "inversify";
+import { IMessageBroker } from "../interfaces/IMessageBroker";
 
-export class MessageBroker implements IMessageBroker{
-	NotifyToPromotionService(product: unknown) {
-		//kafka //RabbitMQ
-		console.log('calling message broker')
-		return true;
-	}
+@injectable()
+export class MessageBroker implements IMessageBroker {
+  NotifyToPromotionService(product: unknown) {
+    // do something
+    console.log("calling message broker");
+    return true;
+  }
 }
