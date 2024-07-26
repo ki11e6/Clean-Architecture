@@ -5,22 +5,25 @@ import { IProductRepository } from "../interfaces/IProductRepository";
 
 export class ProductInteractor implements IProductInteractor {
   private repository: IProductRepository;
-  // private mailer: IMailer;
-  // private brocker: IMessageBroker;
+  private mailer: IMailer;
+  private broker: IMessageBroker;
   constructor(
     repository: IProductRepository
-    // mailer: IMailer,
-    // brocker: IMessageBroker
+    mailer: IMailer,
+    broker: IMessageBroker
   ) {
-    // this.mailer = mailer;
-    // this.brocker = brocker;
-    this.repository = repository;
+     this.mailer = mailer;
+     this.brocker = brocker;
+     this.repository = repository;
   }
-  createProduct(input: any) {
-    return this.repository.create(input);
+  async createProduct(input: any) {
+    const data= this.repository.create(input);
+	//valdation
+	await this.broker.NotifyToPromotionService(data)
   }
-  updateStock(id: number, stock: number) {
-    return this.repository.update(id, stock);
+  async updateStock(id: number, stock: number) {
+    const data= this.repository.update(id, stock);
+	await this.mailer.SendEmail('someone@someone.com', data)
   }
   getProducts(limit: number, offset: number) {
     return this.repository.find(limit, offset);

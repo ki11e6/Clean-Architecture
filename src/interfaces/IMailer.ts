@@ -1,3 +1,3 @@
 export interface IMailer {
-  SendEmail(ro: string, product: unknown): Promise<any>;
+  SendEmail(to: string, product: unknown):any;
 }

@@ -1,3 +1,3 @@
 export interface IMessageBroker {
-  NotifyToPromotionService(product: unknown): Promise<any>;
+  NotifyToPromotionService(product: unknown):any;
 }

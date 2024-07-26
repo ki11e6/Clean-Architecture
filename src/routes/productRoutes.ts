@@ -2,10 +2,14 @@ import express from "express";
 import { ProductController } from "../controllers/ProductContoller";
 import { ProductRepository } from "../repositories/productRespository";
 import { ProductInteractor } from "../interactors/productInteractor";
+import {Mailer} from "../external-libraries/mailer";
+import {MessageBroker} from "../external-libraries/messageBroker";
 
 const repository = new ProductRepository();
 
-const interactor = new ProductInteractor(repository);
+const mailer=new Mailer()
+const broker=new MessageBroker()
+const interactor = new ProductInteractor(repository,mailer,broker);
 
 const controller = new ProductController(interactor);
 
