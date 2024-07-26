@@ -3,10 +3,10 @@ POST http://localhost:9000/products
 Content-Type: application/json
 
     {
-        "name": "iphone",
-        "description": " good phone",
-        "price": 100,
-        "stock": 10
+        "name": "iwatch",
+        "description": " apple watch",
+        "price": 1000,
+        "stock": 12
     }
 
 ### Get products
