@@ -1,12 +1,12 @@
 #Create Product
 POST http://localhost:9000/products
-
 Content-Type: application/json
+
     {
-      "name":"iMac",
-      "description":"A desktop computer",
-      "stock":100,
-      "price":1600
+        "name": "iphone",
+        "description": " good phone",
+        "price": 100,
+        "stock": 10
     }
 
 ### Get products
@@ -14,7 +14,7 @@ GET http://localhost:9000/products
 Content-Type: application/json
 
 ### Update Stock
-PATCH http://localhost:9000/products/2
+PATCH http://localhost:9000/products/3
 Content-Type: application/json
 
     {

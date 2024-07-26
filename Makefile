@@ -14,6 +14,6 @@ create_migration:
 	db-migrate create $(n) --sql-file
 
 server:
-	pnpm run dev
+	yarn run dev
 
 .PHONEY: start_db stop_db server migrate migrate-down create_migration

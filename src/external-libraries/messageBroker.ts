@@ -4,8 +4,8 @@ import { IMessageBroker } from "../interfaces/IMessageBroker";
 @injectable()
 export class MessageBroker implements IMessageBroker {
   NotifyToPromotionService(product: unknown) {
-    // do something
-    console.log("calling message broker");
+    // Kafka // RabbitMQ
+    console.log("Calling message broker");
     return true;
   }
 }
