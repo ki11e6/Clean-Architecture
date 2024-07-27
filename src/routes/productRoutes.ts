@@ -9,7 +9,7 @@ import { IMailer } from "../interfaces/IMailer";
 import { Mailer } from "../external-libraries/mailer";
 import { IMessageBroker } from "../interfaces/IMessageBroker";
 import { MessageBroker } from "../external-libraries/messageBroker";
-import { ProductController } from "../controllers/ProductController";
+import { ProductController } from "../controllers/productController";
 
 const container = new Container();
 
